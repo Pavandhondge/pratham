@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partham Aamle - UPSC Journey | IAS Aspirant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --light: #f5f5f5;
+            --text: #333;
+            --card-bg: #fff;
+        }
+
+        body {
+            font-family: 'Source Serif 4', serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="none"/><path d="M50 0L0 50l50 50 50-50z" fill="rgba(255,255,255,0.03)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 2rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Biography Section */
+        .bio-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bio-section::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 10rem;
+            font-family: 'Playfair Display', serif;
+            color: rgba(233, 69, 96, 0.1);
+            line-height: 1;
+        }
+
+        .bio-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 5px solid white;
+            outline: 2px solid var(--gold);
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .bio-text {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .bio-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .bio-details {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .bio-details p {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .bio-details strong {
+            color: var(--accent);
+            min-width: 140px;
+        }
+
+        /* Motivation Quote */
+        .motivation-quote {
+            background: linear-gradient(135deg, var(--accent) 0%, #c73652 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+
+        .motivation-quote::before {
+            content: '❝';
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            font-size: 6rem;
+            opacity: 0.2;
+            font-family: serif;
+        }
+
+        .motivation-quote::after {
+            content: '❞';
+            position: absolute;
+            bottom: 10px;
+            right: 30px;
+            font-size: 6rem;
+            opacity: 0.2;
+            font-family: serif;
+        }
+
+        .motivation-quote p {
+            font-size: 1.8rem;
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* UPSC Subjects Grid */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .subject-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--accent);
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .subject-card:hover::before {
+            opacity: 1;
+        }
+
+        .subject-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .subject-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .subject-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .subject-card .notes-count {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Notes Section */
+        .notes-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+        }
+
+        .notes-list {
+            list-style: none;
+        }
+
+        .note-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .note-item:hover {
+            background: #f8f9fa;
+            padding-left: 2rem;
+        }
+
+        .note-item:last-child {
+            border-bottom: none;
+        }
+
+        .note-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .note-meta {
+            font-size: 0.85rem;
+            color: #666;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .note-tag {
+            background: var(--gold);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+
+        /* Add Note Button */
+        .add-note-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #c73652 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .add-note-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 5rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .bio-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .motivation-quote p {
+                font-size: 1.3rem;
+            }
+
+            .subjects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Success Badge */
+        .success-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Partham Aamle</h1>
+                <div class="subtitle">UPSC Civil Services | IAS Aspirant</div>
+                <div class="tagline">Journey of Dedication, Discipline, and Dreams</div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#biography">Biography</a>
+            <a href="#subjects">UPSC Subjects</a>
+            <a href="#notes">Study Notes</a>
+            <a href="#preparation">Preparation Strategy</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Biography Section -->
+            <section id="biography">
+                <h2>About Me</h2>
+                <div class="bio-section">
+                    <div class="bio-content">
+                        <img src="WhatsApp Image 2026-02-05 at 3.49.05 PM.jpeg" alt="Partham Aamle" class="profile-image">
+                        <div class="bio-text">
+                            <h3>Partham Aamle</h3>
+                            <div class="success-badge">🎯 IAS - First Attempt Success</div>
+                            
+                            <div class="bio-details">
+                                <p><strong>Aspiring Position:</strong> Indian Administrative Service (IAS)</p>
+                                <p><strong>Graduation:</strong> Bachelor's in Biotechnology</p>
+                                <p><strong>College:</strong> Chhattrapati Sambhajinagar, Deogiri College</p>
+                                <p><strong>Location:</strong> Sambhajinagar (Aurangabad), Maharashtra</p>
+                                <p><strong>Preparation Status:</strong> Currently Preparing for UPSC CSE</p>
+                            </div>
+
+                            <p style="margin-top: 1.5rem; line-height: 1.8;">
+                                With a strong academic background in Biotechnology and an unwavering commitment to public service, I am preparing for the Union Public Service Commission Civil Services Examination. My goal is to clear the examination in my first attempt and serve the nation as an IAS officer. This website serves as my personal knowledge repository, documenting my preparation journey and storing all essential study materials, notes, and strategies that will guide me toward success.
+                            </p>
+
+                            <p style="margin-top: 1rem; line-height: 1.8;">
+                                Born and raised in Sambhajinagar, I completed my graduation from the prestigious Deogiri College. My scientific training in Biotechnology has equipped me with analytical thinking and problem-solving skills that I now channel toward understanding complex administrative and policy matters. Every day is a step closer to my dream of serving India.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="motivation-quote">
+                    <p>"Success is not final, failure is not fatal: it is the courage to continue that counts. The journey of a thousand miles begins with a single step, and every step I take brings me closer to my dream of serving the nation."</p>
+                </div>
+
+                <div class="motivation-quote" style="margin-top: 2rem;">
+                    <p>"The man who moves a mountain begins by carrying away small stones. With determination, discipline, and dedication, I shall achieve my goal of becoming an IAS officer in my first attempt."</p>
+                </div>
+            </section>
+
+            <!-- UPSC Subjects Section -->
+            <section id="subjects">
+                <h2>UPSC Subjects & Study Areas</h2>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <span class="subject-icon">📚</span>
+                        <h3>History</h3>
+                        <p>Ancient, Medieval & Modern Indian History, World History, Art & Culture</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">🌏</span>
+                        <h3>Geography</h3>
+                        <p>Physical Geography, Indian Geography, World Geography, Environmental Geography</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">⚖️</span>
+                        <h3>Polity</h3>
+                        <p>Indian Constitution, Governance, Political System, Public Administration</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">💰</span>
+                        <h3>Economics</h3>
+                        <p>Indian Economy, Economic Development, Budget, Banking, Economic Policies</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">🔬</span>
+                        <h3>Science & Technology</h3>
+                        <p>General Science, Biotechnology, Space, Innovation, Scientific Developments</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">🌱</span>
+                        <h3>Environment & Ecology</h3>
+                        <p>Environmental Issues, Biodiversity, Climate Change, Conservation, Sustainability</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">🛡️</span>
+                        <h3>Internal Security</h3>
+                        <p>National Security, Defence, Disaster Management, Law & Order</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">🌍</span>
+                        <h3>International Relations</h3>
+                        <p>Foreign Policy, Diplomacy, Global Organizations, Geopolitics</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">✍️</span>
+                        <h3>Essay Writing</h3>
+                        <p>Essay Preparation, Writing Skills, Current Topics, Practice Essays</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">📰</span>
+                        <h3>Current Affairs</h3>
+                        <p>Daily News Analysis, Monthly Compilations, Important Events, PIB Updates</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">📖</span>
+                        <h3>Ethics & Integrity</h3>
+                        <p>Case Studies, Ethical Dilemmas, Values, Attitude, Aptitude</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+
+                    <div class="subject-card">
+                        <span class="subject-icon">📝</span>
+                        <h3>Answer Writing</h3>
+                        <p>Mains Answer Practice, Previous Year Questions, Model Answers</p>
+                        <span class="notes-count">0 Notes Available</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Study Notes Section -->
+            <section id="notes">
+                <h2>Study Notes Repository</h2>
+                <div class="notes-container">
+                    <p style="text-align: center; color: #666; padding: 2rem;">
+                        📚 Your study notes will be organized here. Add notes for each subject as you progress through your UPSC preparation journey.
+                    </p>
+                    <div style="text-align: center;">
+                        <button class="add-note-btn" onclick="alert('Note: You can start adding your notes here as you study each subject. Organize them by topic and date for easy revision!')">
+                            + Add New Study Note
+                        </button>
+                    </div>
+
+                    <!-- Sample Note Structure -->
+                    <ul class="notes-list" style="margin-top: 2rem; display: none;">
+                        <li class="note-item">
+                            <div class="note-title">Sample Note Title</div>
+                            <div class="note-meta">
+                                <span class="note-tag">History</span>
+                                <span>Added on: Jan 2026</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Preparation Strategy -->
+            <section id="preparation">
+                <h2>Preparation Strategy</h2>
+                <div class="bio-section">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;">My UPSC Preparation Roadmap</h3>
+                    
+                    <div style="margin: 2rem 0;">
+                        <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.3rem;">📌 Key Focus Areas</h4>
+                        <ul style="list-style-position: inside; line-height: 2;">
+                            <li><strong>Comprehensive Coverage:</strong> Complete coverage of all UPSC subjects with emphasis on NCERT foundation</li>
+                            <li><strong>Current Affairs:</strong> Daily newspaper reading, monthly magazine analysis, and PIB updates</li>
+                            <li><strong>Answer Writing:</strong> Regular practice of answer writing with peer review and mentor guidance</li>
+                            <li><strong>Revision Strategy:</strong> Multiple revisions with concise notes and mind maps</li>
+                            <li><strong>Test Series:</strong> Regular mock tests and previous year papers analysis</li>
+                            <li><strong>Optional Subject:</strong> Strategic preparation aligned with career goals and personal interest</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 2rem 0;">
+                        <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.3rem;">🎯 Daily Study Schedule</h4>
+                        <p style="line-height: 1.8;">
+                            Consistent 8-10 hours of focused study including newspaper reading, subject preparation, answer writing practice, and current affairs compilation. Balance between Prelims and Mains preparation with regular assessment and course correction.
+                        </p>
+                    </div>
+
+                    <div style="margin: 2rem 0;">
+                        <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.3rem;">💪 Maintaining Motivation</h4>
+                        <p style="line-height: 1.8;">
+                            Regular physical exercise, meditation, and hobby time to maintain mental and physical wellness. Connecting with fellow aspirants, reading success stories, and visualizing the goal of serving the nation keeps the motivation high throughout this rigorous journey.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Partham Aamle - UPSC Journey | Aspiring IAS Officer</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Dedicated to Excellence, Committed to Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Add intersection observer for animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.subject-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
